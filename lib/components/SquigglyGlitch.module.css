@@ -1,0 +1,32 @@
+.hiddensvg {
+  display: block;
+  position: absolute;
+  height: 0;
+  width: 0;
+  overflow: hidden;
+}
+
+.active {
+  animation: loop var(--glitch-rate) linear infinite;
+}
+
+@keyframes loop {
+  0% {
+    filter: var(--glitch-id-0);
+  }
+  20% {
+    filter: var(--glitch-id-1);
+  }
+  40% {
+    filter: var(--glitch-id-2);
+  }
+  60% {
+    filter: var(--glitch-id-3);
+  }
+  80% {
+    filter: var(--glitch-id-4);
+  }
+  100% {
+    filter: var(--glitch-id-0);
+  }
+}

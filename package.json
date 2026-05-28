@@ -1,0 +1,39 @@
+{
+  "name": "react-squiggly-glitch",
+  "version": "0.1.0",
+  "license": "MIT",
+  "author": "Ditpowuh",
+  "type": "module",
+  "main": "dist/main.js",
+  "types": "dist/main.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b ./tsconfig.lib.json && vite build"
+  },
+  "peerDependencies": {
+    "react": "^19 || ^18",
+    "react-dom": "^19 || ^18"
+  },
+  "devDependencies": {
+    "@types/node": "^24.12.3",
+    "@types/react": "^19 || ^18",
+    "@types/react-dom": "^19 || ^18",
+    "@vitejs/plugin-react": "^6.0.1",
+    "globals": "^17.6.0",
+    "typescript": "~6.0.2",
+    "vite": "^8.0.12",
+    "vite-plugin-checker": "^0.14.1",
+    "vite-plugin-dts": "^5.0.1"
+  },
+  "homepage": "https://github.com/ditpowuh/react-squiggly-glitch#readme",
+  "bugs": {
+    "url": "https://github.com/ditpowuh/react-squiggly-glitch/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ditpowuh/react-squiggly-glitch.git"
+  }
+}
