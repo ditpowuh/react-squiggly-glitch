@@ -23,8 +23,8 @@ export default function App() {
   const [active, setActive] = useState<boolean>(true);
   const [image, setImage] = useState<string>(springImage);
 
-  const handlePlaygroundImage = (event) => {
-    const file = event.target.files[0];
+  const handlePlaygroundImage = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
 
     if (file) {
       const allowedTypes = ["image/jpeg", "image/png", "image/gif", "image/webp", "image/svg+xml", "image/avif", "image/apng", "image/bmp"];
@@ -72,7 +72,7 @@ export default function App() {
         <div className={styles.settings}>
           <div>
             <input id="file" type="file" accept="image/*" onChange={handlePlaygroundImage}/>
-            <label for="file">Upload file</label>
+            <label htmlFor="file">Upload file</label>
           </div>
           <div>
             <label>{`Rate (${rate}):`}</label>
@@ -82,7 +82,7 @@ export default function App() {
           <div>
             <label>{`Mode:`}</label>
             <br/>
-            <select value={mode} onChange={(e) => setMode(e.target.value)}>
+            <select value={mode} onChange={(e) => setMode(e.target.value as "smooth" | "sharp")}>
               <option value="smooth">Smooth</option>
               <option value="sharp">Sharp</option>
             </select>
