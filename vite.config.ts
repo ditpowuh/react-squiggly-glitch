@@ -7,6 +7,26 @@ import react, {reactCompilerPreset} from "@vitejs/plugin-react";
 import babel from "@rolldown/plugin-babel";
 import cssInjectedByJsPlugin from "vite-plugin-css-injected-by-js";
 import dts from "vite-plugin-dts";
+import preserveUseClientDirective from "rollup-plugin-preserve-use-client";
+
+import type {Plugin} from "vite";
+
+function fixUseClientDirective(): Plugin {
+  return {
+    name: "fix-use-client-directive",
+    enforce: "post",
+    generateBundle(_options, bundle) {
+      for (const chunk of Object.values(bundle)) {
+        if (chunk.type !== "chunk" || !/['"]use client['"]/.test(chunk.code)) {
+          continue;
+        }
+
+        chunk.code = chunk.code.replace(/['"]use client['"];?\s*\n?/g, "");
+        chunk.code = `"use client";\n${chunk.code}`;
+      }
+    },
+  };
+}
 
 export default defineConfig({
   plugins: [
@@ -25,7 +45,9 @@ export default defineConfig({
       insertTypesEntry: true,
       include: ["lib"],
       tsconfigPath: path.resolve(__dirname, "tsconfig.lib.json")
-    })
+    }),
+    preserveUseClientDirective(),
+    fixUseClientDirective()
   ],
   build: {
     lib: {
@@ -33,7 +55,13 @@ export default defineConfig({
       formats: ["es"]
     },
     rollupOptions: {
-      external: ["react", "react-dom"],
+      external: [
+        "react",
+        "react-dom",
+        "react-compiler-runtime",
+        "react/jsx-runtime",
+        "react/jsx-dev-runtime",
+      ],
       input: Object.fromEntries(glob.sync("lib/**/*.{ts,tsx}", {
         ignore: ["lib/**/*.d.ts"],
       }).map(file => [
@@ -43,7 +71,6 @@ export default defineConfig({
       output: {
         assetFileNames: "assets/[name][extname]",
         entryFileNames: "[name].js",
-        banner: "\"use client\";"
       }
     },
     copyPublicDir: false
