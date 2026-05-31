@@ -2,7 +2,7 @@
 import styles from "./SquigglyGlitch.module.css";
 import {useId} from "react";
 
-interface SquigglyGlitchProps {
+export interface SquigglyGlitchProps {
   children?: React.ReactNode;
   rate?: number;
   mode?: "smooth" | "sharp";
@@ -18,14 +18,14 @@ export function SquigglyGlitch({children, rate = 500, mode = "smooth", frequency
 
   const filterSteps = Array.from({length: 5});
 
-  const inlineStyles: React.CSSProperties = {
+  const inlineStyles = {
     "--glitch-rate": `${rate}ms`,
     "--glitch-id-0": `url(#${filterIDPrefix}-0)`,
     "--glitch-id-1": `url(#${filterIDPrefix}-1)`,
     "--glitch-id-2": `url(#${filterIDPrefix}-2)`,
     "--glitch-id-3": `url(#${filterIDPrefix}-3)`,
     "--glitch-id-4": `url(#${filterIDPrefix}-4)`,
-  };
+  } as React.CSSProperties;
 
   const turbulenceFrequency: number | string = typeof frequency === "number" ? frequency : `${frequency[0]} ${frequency[1]}`;
 
