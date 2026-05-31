@@ -3,13 +3,19 @@ import path from "path";
 import {fileURLToPath} from "node:url";
 import {glob} from "glob";
 
-import react from "@vitejs/plugin-react";
+import react, {reactCompilerPreset} from "@vitejs/plugin-react";
+import babel from "@rolldown/plugin-babel";
 import cssInjectedByJsPlugin from "vite-plugin-css-injected-by-js";
 import dts from "vite-plugin-dts";
 
 export default defineConfig({
   plugins: [
     react(),
+    babel({
+      presets: [reactCompilerPreset({
+        target: "18"
+      })]
+    }),
     cssInjectedByJsPlugin({
       jsAssetsFilterFunction: (outputChunk) => {
         return outputChunk.fileName === "main.js";

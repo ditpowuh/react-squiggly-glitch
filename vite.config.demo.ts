@@ -1,10 +1,16 @@
 import {defineConfig} from "vite";
 
-import react from "@vitejs/plugin-react";
+import react, {reactCompilerPreset} from "@vitejs/plugin-react";
+import babel from "@rolldown/plugin-babel";
 
 export default defineConfig({
   plugins: [
-    react()
+    react(),
+    babel({
+      presets: [reactCompilerPreset({
+        target: "18"
+      })]
+    })
   ],
   build: {
     outDir: "demo"

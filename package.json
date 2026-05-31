@@ -24,15 +24,20 @@
     "build:demo": "tsc -b && vite build --config vite.config.demo.ts",
     "prepublishOnly": "npm run build"
   },
+  "dependencies": {
+    "react-compiler-runtime": "^1.0.0"
+  },
   "peerDependencies": {
     "react": "^19 || ^18",
     "react-dom": "^19 || ^18"
   },
   "devDependencies": {
+    "@rolldown/plugin-babel": "^0.2.3",
     "@types/node": "^24.12.3",
     "@types/react": "^19 || ^18",
     "@types/react-dom": "^19 || ^18",
     "@vitejs/plugin-react": "^6.0.1",
+    "babel-plugin-react-compiler": "^1.0.0",
     "glob": "^13.0.6",
     "globals": "^17.6.0",
     "typescript": "~6.0.2",
