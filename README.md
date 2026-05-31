@@ -6,6 +6,9 @@ This was inspired and based on [react-glitch-effect](https://www.npmjs.com/packa
 
 > Note that there are some limitations - for example, upon testing on iOS, the effect is not visible on a `<video/>` element, but is otherwise visible on a desktop device.
 
+### Demo
+Check out the demo [here](https://react-squiggly-glitch.ditpowuh.com/) to see and play around with the different effects.
+
 ### Usage
 To use the component, first import `SquigglyGlitch` into your file:
 ```tsx
