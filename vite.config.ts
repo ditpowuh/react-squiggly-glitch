@@ -6,7 +6,6 @@ import {glob} from "glob";
 import react, {reactCompilerPreset} from "@vitejs/plugin-react";
 import babel from "@rolldown/plugin-babel";
 import cssInjectedByJsPlugin from "vite-plugin-css-injected-by-js";
-import preserveUseClientDirective from "rollup-plugin-preserve-use-client";
 import dts from "vite-plugin-dts";
 
 export default defineConfig({
@@ -22,7 +21,6 @@ export default defineConfig({
         return outputChunk.fileName === "main.js";
       }
     }),
-    preserveUseClientDirective(),
     dts({
       insertTypesEntry: true,
       include: ["lib"],
@@ -44,7 +42,8 @@ export default defineConfig({
       ])),
       output: {
         assetFileNames: "assets/[name][extname]",
-        entryFileNames: "[name].js"
+        entryFileNames: "[name].js",
+        banner: "\"use client\";"
       }
     },
     copyPublicDir: false

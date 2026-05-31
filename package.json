@@ -1,6 +1,6 @@
 {
   "name": "react-squiggly-glitch",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "license": "MIT",
   "author": "Ditpowuh",
   "keywords": [
@@ -45,7 +45,6 @@
     "babel-plugin-react-compiler": "^1.0.0",
     "glob": "^13.0.6",
     "globals": "^17.6.0",
-    "rollup-plugin-preserve-use-client": "^3.0.1",
     "typescript": "~6.0.2",
     "vite": "^8.0.12",
     "vite-plugin-css-injected-by-js": "^5.0.1",
