@@ -54,7 +54,7 @@ export default function App() {
           <strong>React Squiggly Glitch</strong> is a lightweight React component that uses svg filters to apply a glitch or shaky effect to any element.
         </div>
         <div>
-          This was inspired and based on <a href="https://www.npmjs.com/package/react-glitch-effect" target="_blank" rel="noopener noreferrer">react-glitch-effect</a>"s <strong>GlitchSquiggly</strong>.
+          This was inspired and based on <a href="https://www.npmjs.com/package/react-glitch-effect" target="_blank" rel="noopener noreferrer">react-glitch-effect</a>'s <strong>GlitchSquiggly</strong>.
         </div>
         <div>
           For more information and examples of how to use in code, check out the <a href="https://github.com/ditpowuh/react-squiggly-glitch" target="_blank" rel="noopener noreferrer">GitHub repository</a> or the <a href="https://www.npmjs.com/package/react-squiggly-glitch" target="_blank" rel="noopener noreferrer">npm page</a>.
