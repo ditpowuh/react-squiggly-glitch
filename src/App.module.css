@@ -1,0 +1,95 @@
+.content {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 0 1em;
+}
+
+.content section:first-of-type {
+  margin-bottom: 2em;
+}
+
+.welcome {
+  font-family: Georgia, serif;
+  text-transform: lowercase;
+  font-size: 5em;
+  margin: 2rem 0;
+}
+
+.between {
+  font-family: Georgia, serif;
+  text-transform: lowercase;
+  font-size: 3em;
+}
+
+.heading {
+  font-family: monospace;
+  text-transform: lowercase;
+  font-size: 4em;
+}
+
+.description {
+  margin: 2em 0;
+}
+
+.description div {
+  margin: 1em 0;
+}
+
+.subheading {
+  font-size: 3em;
+  margin: 1rem;
+}
+
+.settings > div {
+  margin: 0.5em 0;
+}
+
+.settings > div:first-of-type {
+  margin: 1em 0 2em 0;
+}
+
+.settings input[type="range"] {
+  max-width: 24em;
+  width: 100%;
+}
+
+.settings input[type="file"] {
+  display: none;
+}
+
+.settings label[for="file"] {
+  background: #ffffff;
+  padding: 0.5em 1em;
+  border-radius: 1em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.settings label[for="file"]:hover {
+  color: #444444;
+}
+
+.examples > div {
+  margin: 2em 0;
+}
+
+.examplenote {
+  font-weight: bold;
+}
+
+.bigexample {
+  max-width: 48em;
+  width: 100%;
+  height: auto;
+}
+
+.smallexample {
+  max-width: 12em;
+  width: 100%;
+  height: auto;
+}
+
+.note {
+  margin: 2rem 0;
+}
