@@ -58,6 +58,9 @@ export default function App() {
         </div>
         <div>
           For more information and examples of how to use in code, check out the <a href="https://github.com/ditpowuh/react-squiggly-glitch" target="_blank" rel="noopener noreferrer">GitHub repository</a> or the <a href="https://www.npmjs.com/package/react-squiggly-glitch" target="_blank" rel="noopener noreferrer">npm page</a>.
+          <div className={styles.tiny}>
+            Tested with <strong>Vite</strong> and <strong>Next.JS</strong>!
+          </div>
         </div>
       </div>
       <div>
@@ -167,7 +170,11 @@ export default function App() {
           <div>but it still works fine with desktop!</div>
         </div>
       </div>
-      <div className={styles.note}>All images are from <a href="https://pixabay.com/" target="_blank" rel="noopener noreferrer">Pixabay</a> and <a href="https://www.pexels.com/" target="_blank" rel="noopener noreferrer">Pexels</a>.</div>
+      <div className={styles.note}>
+        <div>All visuals are from <a href="https://pixabay.com/" target="_blank" rel="noopener noreferrer">Pixabay</a> and <a href="https://www.pexels.com/" target="_blank" rel="noopener noreferrer">Pexels</a>.</div>
+        <div className={styles.tiny}>(apart from the vite logo... which obviously is from vite)</div>
+      </div>
+
     </main>
   );
 }

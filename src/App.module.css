@@ -31,7 +31,7 @@
   margin: 2em 0;
 }
 
-.description div {
+.description > div {
   margin: 1em 0;
 }
 
@@ -92,4 +92,8 @@
 
 .note {
   margin: 2rem 0;
+}
+
+.tiny {
+  font-size: 0.75em;
 }
