@@ -1,6 +1,6 @@
 {
   "name": "react-squiggly-glitch",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "license": "MIT",
   "author": "Ditpowuh",
   "keywords": [
@@ -11,7 +11,15 @@
   ],
   "type": "module",
   "main": "dist/main.js",
+  "module": "dist/main.js",
   "types": "dist/main.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/main.d.ts",
+      "import": "./dist/main.js",
+      "default": "./dist/main.js"
+    }
+  },
   "files": [
     "dist"
   ],
@@ -37,6 +45,7 @@
     "babel-plugin-react-compiler": "^1.0.0",
     "glob": "^13.0.6",
     "globals": "^17.6.0",
+    "rollup-plugin-preserve-use-client": "^3.0.1",
     "typescript": "~6.0.2",
     "vite": "^8.0.12",
     "vite-plugin-css-injected-by-js": "^5.0.1",
