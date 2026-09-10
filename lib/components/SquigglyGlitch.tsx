@@ -2,6 +2,8 @@
 import styles from "./SquigglyGlitch.module.css";
 import {useId} from "react";
 
+import {getHashFromID} from "../utility";
+
 export interface SquigglyGlitchProps {
   children?: React.ReactNode;
   rate?: number;
@@ -15,6 +17,8 @@ export interface SquigglyGlitchProps {
 export function SquigglyGlitch({children, rate = 500, mode = "smooth", frequency = 0.25, layers = 2, noiseScale = 5, active = true}: SquigglyGlitchProps) {
   const uniqueID = useId().replace(/:/g, "");
   const filterIDPrefix = `squiggly-filter-${uniqueID}`;
+
+  const seed = getHashFromID(uniqueID);
 
   const filterSteps = Array.from({length: 5});
 
@@ -36,7 +40,7 @@ export function SquigglyGlitch({children, rate = 500, mode = "smooth", frequency
           {
             filterSteps.map((_, index) => (
               <filter id={`${filterIDPrefix}-${index}`} key={index}>
-                <feTurbulence type={mode === "smooth" ? "fractalNoise" : "turbulence"} baseFrequency={turbulenceFrequency} numOctaves={layers} result="noise" seed={index + 1}/>
+                <feTurbulence type={mode === "smooth" ? "fractalNoise" : "turbulence"} baseFrequency={turbulenceFrequency} numOctaves={layers} result="noise" seed={seed + index + 1}/>
                 <feDisplacementMap in="SourceGraphic" in2="noise" scale={noiseScale}/>
               </filter>
             ))
