@@ -44,14 +44,14 @@ export default defineConfig({
     dts({
       insertTypesEntry: true,
       include: ["lib"],
-      tsconfigPath: path.resolve(__dirname, "tsconfig.lib.json")
+      tsconfigPath: path.resolve(import.meta.dirname, "tsconfig.lib.json")
     }),
     preserveUseClientDirective(),
     fixUseClientDirective()
   ],
   build: {
     lib: {
-      entry: path.resolve(__dirname, "lib/main.ts"),
+      entry: path.resolve(import.meta.dirname, "lib/main.ts"),
       formats: ["es"]
     },
     rollupOptions: {
