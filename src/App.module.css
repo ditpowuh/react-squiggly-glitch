@@ -90,6 +90,13 @@
   height: auto;
 }
 
+.morphintro {
+  font-family: Georgia, serif;
+  text-transform: lowercase;
+  font-size: 3em;
+  margin: 2rem 0;
+}
+
 .note {
   margin: 2rem 0;
 }

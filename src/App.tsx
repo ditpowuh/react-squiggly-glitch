@@ -1,14 +1,18 @@
 import styles from "./App.module.css";
 import {useState} from "react";
 
-import {SquigglyGlitch} from "../lib/main";
-import {SKETCHY_PRESET, WATERCOLOR_PRESET, VHS_PRESET, GRAINY_PRESET} from "../lib/main";
+import {SquigglyGlitch, SquigglyMorphGlitch} from "../lib/main";
+import {SKETCHY_PRESET, WATERCOLOR_PRESET, VHS_PRESET, GRAINY_PRESET} from "../lib/constants/presets/squigglyglitch";
+import {WATER_PRESET, BLUR_PRESET} from "../lib/constants/presets/squigglymorphglitch";
 
 import springImage from "./assets/Spring.jpg";
 import grootImage from "./assets/Groot.jpg";
 import cityImage from "./assets/City.jpg";
 import techDeskImage from "./assets/Desk.jpg";
 import leavesImage from "./assets/Leaves.jpg";
+import forestImage from "./assets/Forest.jpg";
+import fishImage from "./assets/Fish.png";
+import catImage from "./assets/Cat.jpg";
 
 import viteLogo from "./assets/Vite.svg";
 import sunsetGif from "./assets/Sunset.gif";
@@ -170,11 +174,37 @@ export default function App() {
           <div>but it still works fine with desktop!</div>
         </div>
       </div>
+      <br/>
+      <div>
+        <SquigglyMorphGlitch noiseScale={[5, 10]}>
+          <div className={styles.morphintro}>A new challenger approaches...</div>
+        </SquigglyMorphGlitch>
+        <div>Another component has been added... <strong>SquigglyMorphGlitch</strong>!</div>
+        <div className={styles.examples}>
+          <div>
+            <SquigglyMorphGlitch>
+              <img className={styles.bigexample} src={forestImage}/>
+            </SquigglyMorphGlitch>
+            <div className={styles.examplenote}>This is using the preset DEFAULT_PRESET</div>
+          </div>
+          <div>
+            <SquigglyMorphGlitch {...WATER_PRESET}>
+              <img className={styles.bigexample} src={fishImage}/>
+            </SquigglyMorphGlitch>
+            <div className={styles.examplenote}>This is using the preset WATER_PRESET</div>
+          </div>
+          <div>
+            <SquigglyMorphGlitch {...BLUR_PRESET}>
+              <img className={styles.bigexample} src={catImage}/>
+            </SquigglyMorphGlitch>
+            <div className={styles.examplenote}>This is using the preset BLUR_PRESET</div>
+          </div>
+        </div>
+      </div>
       <div className={styles.note}>
         <div>All visuals are from <a href="https://pixabay.com/" target="_blank" rel="noopener noreferrer">Pixabay</a> and <a href="https://www.pexels.com/" target="_blank" rel="noopener noreferrer">Pexels</a>.</div>
         <div className={styles.tiny}>(apart from the vite logo... which obviously is from vite)</div>
       </div>
-
     </main>
   );
 }
