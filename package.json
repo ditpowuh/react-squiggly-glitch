@@ -18,6 +18,18 @@
       "types": "./dist/main.d.ts",
       "import": "./dist/main.js",
       "default": "./dist/main.js"
+    },
+    "./presets": {
+      "types": "./dist/constants/presets/index.d.ts",
+      "import": "./dist/constants/presets/index.js"
+    },
+    "./presets/SquigglyGlitch": {
+      "types": "./dist/constants/presets/squigglyglitch.d.ts",
+      "import": "./dist/constants/presets/squigglyglitch.js"
+    },
+    "./presets/SquigglyMorphGlitch": {
+      "types": "./dist/constants/presets/squigglymorphglitch.d.ts",
+      "import": "./dist/constants/presets/squigglymorphglitch.js"
     }
   },
   "files": [

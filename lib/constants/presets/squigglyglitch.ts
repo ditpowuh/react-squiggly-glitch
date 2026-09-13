@@ -1,4 +1,4 @@
-import type {SquigglyGlitchProps} from "../components/SquigglyGlitch";
+import type {SquigglyGlitchProps} from "../../components/SquigglyGlitch";
 
 export const DEFAULT_PRESET: SquigglyGlitchProps = {
   rate: 500,
