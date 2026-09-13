@@ -1,0 +1,11 @@
+.hiddensvg {
+  display: block;
+  position: absolute;
+  height: 0;
+  width: 0;
+  overflow: hidden;
+}
+
+.active {
+  filter: var(--glitch-id);
+}
