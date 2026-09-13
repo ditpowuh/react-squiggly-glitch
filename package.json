@@ -37,19 +37,19 @@
     "react-dom": "^19 || ^18"
   },
   "devDependencies": {
-    "@rolldown/plugin-babel": "^0.2.3",
-    "@types/node": "^24.12.3",
-    "@types/react": "^19 || ^18",
-    "@types/react-dom": "^19 || ^18",
-    "@vitejs/plugin-react": "^6.0.5",
+    "@rolldown/plugin-babel": "^0.2.4",
+    "@types/node": "^24.13.4",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.1",
     "babel-plugin-react-compiler": "^1.0.0",
     "glob": "^13.0.6",
-    "globals": "^17.6.0",
+    "globals": "^17.12.0",
     "rollup-plugin-preserve-use-client": "^3.0.1",
     "typescript": "~6.0.2",
-    "vite": "^8.2.1",
+    "vite": "^8.3.0",
     "vite-plugin-css-injected-by-js": "^5.0.2",
-    "vite-plugin-dts": "^5.0.3"
+    "vite-plugin-dts": "^5.1.0"
   },
   "homepage": "https://github.com/ditpowuh/react-squiggly-glitch",
   "bugs": {
